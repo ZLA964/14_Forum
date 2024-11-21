@@ -10,8 +10,8 @@ public class ForumImpl implements Forum {
     private int size;
 
     public ForumImpl() {
-        int INITIAL_CAPASITY = 11;
-        posts = new Post[INITIAL_CAPASITY];
+        int INITIAL_CAPACITY = 11;
+        posts = new Post[INITIAL_CAPACITY];
     }
 
     @Override
