@@ -3,9 +3,9 @@ package telran.forum.model;
 import java.time.LocalDateTime;
 
 public class Post implements Comparable<Post>{
-    private int postId;
+    private final int postId;
     private String title;
-    private String author;
+    private final String author;
     private String content;
     private LocalDateTime date;
     private int likes;
