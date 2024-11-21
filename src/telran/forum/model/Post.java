@@ -81,6 +81,7 @@ public class Post implements Comparable<Post>{
         int res = this.author.toUpperCase().compareTo(post.author.toUpperCase());
         res = res!= 0 ? res : this.title.toUpperCase().compareTo(post.title.toUpperCase());
         res = res!= 0 ? res : this.date.compareTo(post.date);
+        res = res!=0 ? res : Integer.compare(this.postId, post.postId);
         return res;
     }
 }
