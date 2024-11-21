@@ -54,6 +54,10 @@ public class Post implements Comparable<Post>{
         return ++this.likes;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
