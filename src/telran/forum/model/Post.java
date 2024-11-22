@@ -58,6 +58,10 @@ public class Post implements Comparable<Post>{
         this.title = title;
     }
 
+    public String idToString(){
+        return Integer.toString(this.postId);
+    }
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
@@ -73,19 +77,20 @@ public class Post implements Comparable<Post>{
 
     @Override
     public String toString() {
-        return  "[ " + postId + " ]" + "< " + author + " >" +
-                "\"" + title + "\"\n" +
-                "{ " + content + " }\n" +
+        return  "<" + author + ">" +
+                "\"" + title + "\"" +
+                "{" + content + "}" +
                 ", date: " + date +
-                ", likes: " + likes;
+                ", likes: " + likes  +"[" + postId + "]";
     }
 
     @Override
     public int compareTo(Post post) {
-        int res = this.author.toUpperCase().compareTo(post.author.toUpperCase());
-        res = res!= 0 ? res : this.title.toUpperCase().compareTo(post.title.toUpperCase());
-        res = res!= 0 ? res : this.date.compareTo(post.date);
-        res = res!=0 ? res : Integer.compare(this.postId, post.postId);
+        int res =  this.getAuthor().compareTo(post.getAuthor());
+ //       res = res!= 0 ? res : this.title.toUpperCase().compareTo(post.title.toUpperCase());
+     //   res = res!= 0 ? res : this.date.compareTo(post.date);
+ //       res = res!=0 ? res : Integer.compare(this.postId, post.postId);
+
         return res;
     }
 }
